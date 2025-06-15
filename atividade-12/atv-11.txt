@@ -1,0 +1,21 @@
+fibonacciUntil :: Int -> [Integer]
+fibonacciUntil n 
+    | n < 0     = []
+    | otherwise = reverse (fibHelper n 0 1 [0])
+  where
+    fibHelper 0 _ _ acc = acc
+    fibHelper k a b acc = fibHelper (k-1) b (a+b) (b:acc)
+
+fibonacciUntil' :: Int -> [Integer]
+fibonacciUntil' n 
+    | n < 0     = []
+    | otherwise = take (n+1) fibs
+  where
+    fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
+
+fibonacciUntil'' :: Int -> [Integer]
+fibonacciUntil'' n = take (n+1) [fib k | k <- [0..]]
+  where
+    fib 0 = 0
+    fib 1 = 1
+    fib k = fib (k-1) + fib (k-2)

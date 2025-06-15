@@ -1,0 +1,11 @@
+contem :: Int -> [Int] -> Bool
+contem _ [] = False              
+contem x (y:ys) 
+    | x == y    = True            
+    | otherwise = contem x ys
+
+contem' :: Int -> [Int] -> Bool
+contem' x = any (== x)
+
+contem'' :: Int -> [Int] -> Bool
+contem'' = elem

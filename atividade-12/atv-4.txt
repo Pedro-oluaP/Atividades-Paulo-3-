@@ -1,0 +1,5 @@
+verificaSinal :: (Num a, Ord a) => a -> a
+verificaSinal x
+    | x > 0     = 1
+    | x < 0     = -1
+    | otherwise = 0

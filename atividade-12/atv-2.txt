@@ -1,0 +1,2 @@
+jurosSimples :: (Num a) => a -> a -> a -> a
+jurosSimples c i t = c * i * t

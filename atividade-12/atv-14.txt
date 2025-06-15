@@ -1,0 +1,7 @@
+intercalar :: [a] -> [a] -> [a]
+intercalar [] ys = ys  
+intercalar xs [] = xs  
+intercalar (x:xs) (y:ys) = x : y : intercalar xs ys 
+
+intercalar' :: [a] -> [a] -> [a]
+intercalar' xs ys = concat (zipWith (\x y -> [x,y]) xs ys) ++ drop (length xs) ys ++ drop (length ys) xs

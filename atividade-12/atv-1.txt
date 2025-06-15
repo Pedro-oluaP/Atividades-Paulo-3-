@@ -1,0 +1,2 @@
+calcCirc :: Floating a => a -> a
+calcCirc r = pi * r^2

@@ -1,0 +1,15 @@
+fib :: Int -> Integer
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n-1) + fib (n-2)
+
+fib' :: Int -> Integer
+fib' n = fibAux n 0 1
+  where
+    fibAux 0 a _ = a
+    fibAux n a b = fibAux (n-1) b (a+b)
+
+fib'' :: Int -> Integer
+fib'' n = fibs !! n
+  where
+    fibs = 0 : 1 : zipWith (+) fibs (tail fibs)

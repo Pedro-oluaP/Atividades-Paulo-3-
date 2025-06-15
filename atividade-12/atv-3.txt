@@ -1,0 +1,7 @@
+maiorEntre :: (Ord a) => a -> a -> a
+maiorEntre x y
+    | x > y     = x
+    | otherwise = y
+
+maiorEntre' :: (Ord a) => a -> a -> a
+maiorEntre' = max

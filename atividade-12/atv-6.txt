@@ -1,0 +1,12 @@
+fatorial :: Integer -> Integer
+fatorial 0 = 1  -- Caso base
+fatorial n = n * fatorial (n - 1)
+
+fatorial' :: Integer -> Integer
+fatorial' n
+    | n == 0    = 1
+    | n > 0     = n * fatorial' (n - 1)
+    | otherwise = error "Fatorial de número negativo"
+
+fatorial'' :: Integer -> Integer
+fatorial'' n = product [1..n]

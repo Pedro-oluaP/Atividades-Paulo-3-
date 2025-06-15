@@ -1,0 +1,8 @@
+mdc :: Int -> Int -> Int
+mdc a 0 = abs a  
+mdc a b = mdc b (a `mod` b)
+
+mdc' :: Int -> Int -> Int
+mdc' a b
+    | b == 0    = abs a
+    | otherwise = mdc' b (a `mod` b)

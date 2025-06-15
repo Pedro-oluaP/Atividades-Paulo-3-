@@ -1,0 +1,14 @@
+menorElemento :: [Int] -> Int
+menorElemento []     = error "Lista vazia!"  
+menorElemento [x]    = x
+menorElemento (x:xs) = min x (menorElemento xs)
+
+menorElemento' :: [Int] -> Int
+menorElemento' = foldr1 min
+
+menorElementoSafe :: [Int] -> Maybe Int
+menorElementoSafe [] = Nothing
+menorElementoSafe xs = Just (minimum xs)
+
+menorElemento'' :: [Int] -> Int
+menorElemento'' = minimum
