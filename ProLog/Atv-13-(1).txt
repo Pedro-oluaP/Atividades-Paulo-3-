@@ -1,0 +1,37 @@
+mae(ana, no).
+mae(ana, eva).
+mae(bia, cio).
+mae(bia, gli).
+mae(bia, ary).
+mae(lia, noe).
+
+pai(ivo, no).
+pai(ivo, eva).
+pai(rai, cio).
+pai(rai, gli).
+pai(rai, ary).
+pai(gil, noe).
+
+mulher(ana).
+mulher(eva).
+mulher(bia).
+mulher(lia).
+mulher(cio).
+mulher(ary).
+
+homem(no).
+homem(noe).
+homem(ivo).
+homem(rai).
+homem(gil).
+homem(gli).
+
+gerou(X, Y) :- pai(X, Y); mae(X, Y).
+
+feliz(X) :- gerou(X, _).
+
+casal(X, Y) :- 
+    X \= Y,
+    gerou(X, Filho), 
+    gerou(Y, Filho),
+    (homem(X), mulher(Y); homem(Y), mulher(X)).
